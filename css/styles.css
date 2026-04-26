@@ -1,3 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body{
     background-image: url('../img/BTTFII.webp');
     background-repeat: no-repeat;
@@ -5,6 +10,108 @@ body{
     background-position: center center;
     width: 100vw;
     height: 100vh;
-    padding: 0;
-    margin: 0;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 80px;
+    padding: 40px;
+}
+.watch{
+    position: absolute;
+    inset: 0;
+}
+.watch span{
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+    color: white;
+}
+.watch::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.watch{
+    position: absolute;
+    width: 316px;
+    height: 316px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+#clock{
+    position: absolute;
+    top: 160px;
+    left: 160px;
+    width: 316px;
+    height: 316px;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/BTTFII.webp');
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.25);
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.9);
+}
+
+#clock > #hh,
+#clock > #mh,
+#clock > #sh{
+    position: absolute;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 7px;
+    background: #a59f9f;
+}
+
+#clock > #hh {
+    width: 12px;
+    height: 90px;
+    top: 68px;
+    margin-left: -6px;
+}
+
+#clock > #mh {
+    width: 6px;
+    height: 120px;
+    top: 38px;
+    margin-left: -3px;
+}
+
+#clock > #sh {
+    width: 2px;
+    height: 130px;
+    top: 20px;
+    margin-left: -1px;
+    opacity: .3;
+}
+
+#meridiem{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+#display{
+    position: absolute;
+    top: 20px;
+    left: 350px;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 40px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.9);
+
 }
