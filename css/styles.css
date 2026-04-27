@@ -105,13 +105,18 @@ body{
 }
 
 #display{
-    position: absolute;
-    top: 20px;
-    left: 350px;
+    position: relative;
+    top: 290px;
+    left: 1px;
     font-size: 2rem;
+    color: white;
     font-weight: bold;
     border-radius: 50px;
-    border: 40px solid rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.12);
     box-shadow: 3px 3px 8px rgba(0,0,0,0.9);
+    background-image: url("../img/do_not_open_if_you_are_not_ready_for_it.jpg" );
+    width: 490px;
+    height: 548px;
+    background-repeat: no-repeat;
 
 }
