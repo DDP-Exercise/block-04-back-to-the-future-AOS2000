@@ -30,8 +30,30 @@
  *
  *     Now hurry Marty! Or I will be stuck in the past forever!
  *
- *     Doc Brown - 1955-11-05
+ *     Sadiq Qurbani - 1955-11-05
  *******************************************************/
 
-// HINT:
-// setInterval(functionName, 1000); will call functionName() every 1000 miliseconds.
+import { timeModel } from "./model.time.js";
+import { digitalView } from "./view.digital.js";
+import { analogueView } from "./view.analagoue.js";
+
+let clockController = {
+    updateClock: function () {
+        let time = timeModel.getTime();
+        digitalView.update(time);
+        analogueView.update(time);
+    },
+
+    init: function () {
+        this.updateClock();
+
+        let self = this;
+        setInterval(function () {
+            self.updateClock();
+        }, 1000);
+    }
+};
+
+window.addEventListener("load", function () {
+    clockController.init();
+});
